@@ -1,0 +1,223 @@
+/* =========================================
+   DASHBOARD CONTAINER
+   ========================================= */
+.dashboard-container {
+  padding: 25px;
+  background: #0a0a1a; /* deeper dark background for contrast */
+  color: #e0e0ff;
+  font-family: "Inter", sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.dashboard-header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7f5af0, #f0abfc, #7f5af0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s infinite linear;
+  letter-spacing: 1px;
+}
+.dashboard-header p {
+  color: #a3a3d1;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================================
+   CONTROLS
+   ========================================= */
+.dashboard-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+.dashboard-controls button {
+  background: linear-gradient(135deg, #7f5af0, #f0abfc);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dashboard-controls button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(127, 90, 240, 0.6);
+}
+
+/* =========================================
+   CHART CARDS
+   ========================================= */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+  gap: 24px;
+  margin-bottom: 35px;
+}
+
+.chart-card {
+  background: rgba(20, 20, 40, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 36px rgba(127, 90, 240, 0.6);
+  border: 1px solid rgba(127, 90, 240, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chart-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 44px rgba(127, 90, 240, 0.85);
+}
+
+/* Chart Titles */
+.chart-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #7f5af0;
+}
+
+/* =========================================
+   BOTTOM SECTION
+   ========================================= */
+.bottom-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.table-wrapper,
+.monitor-wrapper {
+  flex: 1;
+  min-width: 360px;
+  background: rgba(20, 20, 40, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid rgba(127, 90, 240, 0.45);
+  box-shadow: 0 12px 36px rgba(127, 90, 240, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.table-wrapper:hover,
+.monitor-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 42px rgba(127, 90, 240, 0.9);
+}
+
+/* Table Titles */
+.table-title,
+.monitor-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #7f5af0;
+}
+
+/* =========================================
+   TABLE
+   ========================================= */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #e0e0ff;
+  font-size: 0.95rem;
+}
+.table th,
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+.table th {
+  background: rgba(127, 90, 240, 0.3);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.table tr:hover {
+  background: rgba(127, 90, 240, 0.2);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* =========================================
+   PERFORMANCE MONITOR
+   ========================================= */
+.monitor-content {
+  font-size: 1rem;
+  color: #c4c4ff;
+}
+.monitor-metric {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #f0abfc;
+  text-shadow: 0 0 10px rgba(127, 90, 240, 0.8);
+  animation: pulseGlow 2s infinite;
+}
+.monitor-change {
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+.monitor-change.positive {
+  color: #10ffb0;
+  text-shadow: 0 0 10px #10ffb0;
+}
+.monitor-change.negative {
+  color: #ff4f70;
+  text-shadow: 0 0 10px #ff4f70;
+}
+
+/* Neon pulse animation */
+@keyframes pulseGlow {
+  0%, 100% { text-shadow: 0 0 10px rgba(127, 90, 240, 0.8); }
+  50% { text-shadow: 0 0 25px rgba(127, 90, 240, 1); }
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  .bottom-section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.8rem;
+  }
+  .chart-card,
+  .table-wrapper,
+  .monitor-wrapper {
+    padding: 16px;
+  }
+  .dashboard-controls button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
