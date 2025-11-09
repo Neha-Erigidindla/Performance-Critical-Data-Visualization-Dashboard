@@ -39,15 +39,15 @@ export default function PerformanceDashboardClient() {
         </div>
         <div className="chart-card">
           <h3>Bar Chart</h3>
-          <BarChart data={dataWindow} width={600} height={300} />
+          <BarChart />
         </div>
         <div className="chart-card">
           <h3>Scatter Plot</h3>
-          <ScatterPlot data={dataWindow} width={600} height={300} />
+          <ScatterPlot />
         </div>
         <div className="chart-card">
           <h3>Heatmap</h3>
-          <Heatmap data={dataWindow} width={600} height={300} />
+          <Heatmap />
         </div>
       </section>
 
