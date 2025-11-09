@@ -103,7 +103,7 @@ git clone https://github.com/Neha-Erigidindla/flam-dashboard.git
 #### 2️⃣ Navigate & Install
 
 ```bash
-cd flam-dashboard
+cd Performance-Critical-Data-Visualization-Dashboard
 npm install
 ```
 
